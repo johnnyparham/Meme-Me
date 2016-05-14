@@ -33,7 +33,14 @@ class MemeEditorViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+    
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        shareButton.enabled = imageView.image != nil
+    
     }
+    
+ 
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,7 +58,7 @@ class MemeEditorViewController: UIViewController {
     
     // open the image picker controller from the camera
     @IBAction func pickImageFromCamera(sender: UIBarButtonItem) {
-        
+        pickImage(ofType: UIImagePickerControllerSourceType.Camera)
     }
     
     // share the created meme image
