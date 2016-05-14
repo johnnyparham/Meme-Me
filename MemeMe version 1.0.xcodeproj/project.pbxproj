@@ -13,6 +13,7 @@
 		1323B9AC1CE7A242005C2391 /* MemeMe_version_1_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9AA1CE7A242005C2391 /* MemeMe_version_1_0.xcdatamodeld */; };
 		1323B9AE1CE7A242005C2391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1323B9AD1CE7A242005C2391 /* Assets.xcassets */; };
 		1323B9B11CE7A242005C2391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1323B9AF1CE7A242005C2391 /* LaunchScreen.storyboard */; };
+		1323B9B91CE7B458005C2391 /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9B81CE7B458005C2391 /* ImagePickerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1323B9AD1CE7A242005C2391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1323B9B01CE7A242005C2391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1323B9B21CE7A242005C2391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1323B9B81CE7B458005C2391 /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				1323B9A31CE7A242005C2391 /* AppDelegate.swift */,
 				1323B9A51CE7A242005C2391 /* MemeEditorViewController.swift */,
+				1323B9B81CE7B458005C2391 /* ImagePickerDelegate.swift */,
 				1323B9A71CE7A242005C2391 /* Main.storyboard */,
 				1323B9AD1CE7A242005C2391 /* Assets.xcassets */,
 				1323B9AF1CE7A242005C2391 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1323B9B91CE7B458005C2391 /* ImagePickerDelegate.swift in Sources */,
 				1323B9A61CE7A242005C2391 /* MemeEditorViewController.swift in Sources */,
 				1323B9A41CE7A242005C2391 /* AppDelegate.swift in Sources */,
 				1323B9AC1CE7A242005C2391 /* MemeMe_version_1_0.xcdatamodeld in Sources */,

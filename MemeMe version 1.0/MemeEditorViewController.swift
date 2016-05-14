@@ -20,7 +20,7 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     
-    
+    var pickerDelegate: ImagePickerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class MemeEditorViewController: UIViewController {
     
     // open the image picker controller from the library
     @IBAction func pickImageFromLibrary(sender: UIBarButtonItem) {
-        
+        pickImage(ofType: UIImagePickerControllerSourceType.PhotoLibrary)
     }
     
     // open the image picker controller from the camera
@@ -57,5 +57,17 @@ class MemeEditorViewController: UIViewController {
         
     }
 
+    //MARK: -
+    //MARK: Helper Fuctions
+    
+    // Open the picker with the desired source type
+    private func pickImage(ofType type: UIImagePickerControllerSourceType!) {
+        
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = pickerDelegate
+        pickerController.sourceType = type
+        presentViewController(pickerController, animated: true, completion: nil)
+    }
+    
 }
 
