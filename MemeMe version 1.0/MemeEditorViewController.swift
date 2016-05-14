@@ -24,7 +24,15 @@ class MemeEditorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        imageView.contentMode = .ScaleAspectFit
+        
+        pickerDelegate = ImagePickerDelegate(view: imageView)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
     }
 
     override func didReceiveMemoryWarning() {
