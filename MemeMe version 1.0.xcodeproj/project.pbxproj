@@ -18,6 +18,7 @@
 		1323B9BF1CE83691005C2391 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9BE1CE83691005C2391 /* CoreDataStackManager.swift */; };
 		1323B9C21CE83C95005C2391 /* MemeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9C01CE83C95005C2391 /* MemeModel.xcdatamodeld */; };
 		1323B9C41CE845A4005C2391 /* TopTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9C31CE845A4005C2391 /* TopTextFieldDelegate.swift */; };
+		1323B9C61CE852B3005C2391 /* BottomTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9C51CE852B3005C2391 /* BottomTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1323B9BE1CE83691005C2391 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		1323B9C11CE83C95005C2391 /* MemeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemeModel.xcdatamodel; sourceTree = "<group>"; };
 		1323B9C31CE845A4005C2391 /* TopTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTextFieldDelegate.swift; sourceTree = "<group>"; };
+		1323B9C51CE852B3005C2391 /* BottomTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				1323B9BC1CE7FD09005C2391 /* Meme.swift */,
 				1323B9B81CE7B458005C2391 /* ImagePickerDelegate.swift */,
 				1323B9A71CE7A242005C2391 /* Main.storyboard */,
+				1323B9C51CE852B3005C2391 /* BottomTextFieldDelegate.swift */,
 				1323B9AD1CE7A242005C2391 /* Assets.xcassets */,
 				1323B9AF1CE7A242005C2391 /* LaunchScreen.storyboard */,
 				1323B9B21CE7A242005C2391 /* Info.plist */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1323B9C61CE852B3005C2391 /* BottomTextFieldDelegate.swift in Sources */,
 				1323B9B91CE7B458005C2391 /* ImagePickerDelegate.swift in Sources */,
 				1323B9A61CE7A242005C2391 /* MemeEditorViewController.swift in Sources */,
 				1323B9A41CE7A242005C2391 /* AppDelegate.swift in Sources */,

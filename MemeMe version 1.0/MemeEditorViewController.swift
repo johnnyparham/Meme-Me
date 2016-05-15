@@ -25,6 +25,7 @@ class MemeEditorViewController: UIViewController {
     
     var pickerDelegate: ImagePickerDelegate!
     var topTextDelegate: TopTextFieldDelegate!
+    var bottomTextDelegate: BottomTextFieldDelegate!
     
     
     // variable for image editing
@@ -52,10 +53,13 @@ class MemeEditorViewController: UIViewController {
         
         pickerDelegate = ImagePickerDelegate(view: imageView)
         topTextDelegate = TopTextFieldDelegate()
+        bottomTextDelegate = BottomTextFieldDelegate(screenView: view)
         
         topTextField.delegate = topTextDelegate
+        bottomTextField.delegate = bottomTextDelegate
         
         setupTextField(topTextField, withText: Top_Message)
+        setupTextField(bottomTextField, withText: Bottom_Message)
         
        
         
