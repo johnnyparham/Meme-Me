@@ -37,6 +37,10 @@ class MemeEditorViewController: UIViewController {
         NSStrokeWidthAttributeName : -1.0
     ]
     
+    lazy var temporaryContext: NSManagedObjectContext = {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,8 +94,20 @@ class MemeEditorViewController: UIViewController {
     
     // share the created meme image
     @IBAction func shareMemeImage(sender: UIBarButtonItem) {
+        let generated = generateMeme()
         
+        let nextController = UIActivityViewController(activityItems: [generated], applicationActivities: nil)
+        nextController.completionWithItemsHandler = { activity, success, items, error in
+            
+            if(success) {
+                self.saveMeme(generated)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+        
+        presentViewController(nextController, animated: true, completion: nil)
     }
+    
     
     
     // reset UI
@@ -118,6 +134,36 @@ class MemeEditorViewController: UIViewController {
         field.defaultTextAttributes = memeTextAttributes
         field.textAlignment = NSTextAlignment.Center
     }
+    
+    // generate meme image
+    private func generateMeme() -> UIImage {
+        setToolbarHidden(true)
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
+        
+        let generatedImage : UIImage!
+        generatedImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        setToolbarHidden(false)
+        
+        return generatedImage
+    }
+    
+    // hide toolbars
+    private func setToolbarHidden(isHidden: Bool) {
+        topToolBar.hidden = isHidden
+        bottomToolBar.hidden = isHidden
+    }
+    
+    // create meme object
+    private func saveMeme(generated: UIImage) {
+        _ = Meme(top: topTextField.text!, bottom: bottomTextField.text!, original: imageView.image!, newimage: generated, context: temporaryContext)
+    }
+    
     
     
     
