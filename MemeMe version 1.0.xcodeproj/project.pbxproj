@@ -17,6 +17,7 @@
 		1323B9BD1CE7FD09005C2391 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9BC1CE7FD09005C2391 /* Meme.swift */; };
 		1323B9BF1CE83691005C2391 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9BE1CE83691005C2391 /* CoreDataStackManager.swift */; };
 		1323B9C21CE83C95005C2391 /* MemeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9C01CE83C95005C2391 /* MemeModel.xcdatamodeld */; };
+		1323B9C41CE845A4005C2391 /* TopTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1323B9C31CE845A4005C2391 /* TopTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1323B9BC1CE7FD09005C2391 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		1323B9BE1CE83691005C2391 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		1323B9C11CE83C95005C2391 /* MemeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemeModel.xcdatamodel; sourceTree = "<group>"; };
+		1323B9C31CE845A4005C2391 /* TopTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				1323B9A31CE7A242005C2391 /* AppDelegate.swift */,
 				1323B9A51CE7A242005C2391 /* MemeEditorViewController.swift */,
+				1323B9C31CE845A4005C2391 /* TopTextFieldDelegate.swift */,
 				1323B9BE1CE83691005C2391 /* CoreDataStackManager.swift */,
 				1323B9C01CE83C95005C2391 /* MemeModel.xcdatamodeld */,
 				1323B9BC1CE7FD09005C2391 /* Meme.swift */,
@@ -154,6 +157,7 @@
 				1323B9A61CE7A242005C2391 /* MemeEditorViewController.swift in Sources */,
 				1323B9A41CE7A242005C2391 /* AppDelegate.swift in Sources */,
 				1323B9C21CE83C95005C2391 /* MemeModel.xcdatamodeld in Sources */,
+				1323B9C41CE845A4005C2391 /* TopTextFieldDelegate.swift in Sources */,
 				1323B9AC1CE7A242005C2391 /* MemeMe_version_1_0.xcdatamodeld in Sources */,
 				1323B9BD1CE7FD09005C2391 /* Meme.swift in Sources */,
 				1323B9BF1CE83691005C2391 /* CoreDataStackManager.swift in Sources */,

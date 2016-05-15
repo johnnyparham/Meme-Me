@@ -24,6 +24,7 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var bottomToolBar: UIToolbar!
     
     var pickerDelegate: ImagePickerDelegate!
+    var topTextDelegate: TopTextFieldDelegate!
     
     
     // variable for image editing
