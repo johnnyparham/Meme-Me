@@ -30,12 +30,22 @@ class MemeEditorViewController: UIViewController {
     var imageToEdit: Meme?
     var isEditing : Bool! = false
     
+    let memeTextAttributes = [
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
+        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName : -1.0
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imageView.contentMode = .ScaleAspectFit
         
         pickerDelegate = ImagePickerDelegate(view: imageView)
+        
+        let Top_Message = "Top"
+        let Bottom_Message = "Bottom"
         
     }
     
@@ -92,7 +102,7 @@ class MemeEditorViewController: UIViewController {
     //MARK: -
     //MARK: Helper Fuctions
     
-    // Open the picker with the desired source type
+    // open the picker with the desired source type
     private func pickImage(ofType type: UIImagePickerControllerSourceType!) {
         
         let pickerController = UIImagePickerController()
@@ -100,6 +110,17 @@ class MemeEditorViewController: UIViewController {
         pickerController.sourceType = type
         presentViewController(pickerController, animated: true, completion: nil)
     }
+    
+    // setup text fields
+    private func setupTextField(field: UITextField, withText text: String!) {
+        field.text = text
+        field.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        field.defaultTextAttributes = memeTextAttributes
+        field.textAlignment = NSTextAlignment.Center
+    }
+    
+    
+    
     
 }
 
