@@ -20,6 +20,7 @@ class BottomTextFieldDelegate: NSObject, UITextFieldDelegate {
         container = screenView
     }
     
+    
     // verify textfield has default text when user starts to edit
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -31,6 +32,19 @@ class BottomTextFieldDelegate: NSObject, UITextFieldDelegate {
             currentText = ""
         }
         
+        textField.text = currentText
+    }
+    
+    // dismiss the keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        unsubscribeFromKeyboardNotification()
+        
+        if textField.text == "" {
+            textField.text = bottomText
+        }
+        
+        return true
     }
 
     //MARK: -

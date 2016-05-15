@@ -19,6 +19,7 @@ class MemeEditorViewController: UIViewController {
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
@@ -71,24 +72,17 @@ class MemeEditorViewController: UIViewController {
         // camera button & share button availability
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = imageView.image != nil
+        cancelButton.enabled = imageView.image != nil
         
-        // prepare image for meme
-        if let temp = imageToEdit {
-            imageView.image = UIImage(data: temp.originalImage)
-            topTextField.text = temp.textTop
-            bottomTextField.text = temp.textBottom
-            isEditing = true
-        }
+        
     
     }
     
+    // make this view controller to be full screen
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
  
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     //MARK: -
     //MARK: Action functions
