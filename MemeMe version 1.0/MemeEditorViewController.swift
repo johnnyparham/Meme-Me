@@ -30,6 +30,9 @@ class MemeEditorViewController: UIViewController {
     var imageToEdit: Meme?
     var isEditing : Bool! = false
     
+    let Top_Message = "Top"
+    let Bottom_Message = "Bottom"
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor(),
@@ -48,8 +51,7 @@ class MemeEditorViewController: UIViewController {
         
         pickerDelegate = ImagePickerDelegate(view: imageView)
         
-        let Top_Message = "Top"
-        let Bottom_Message = "Bottom"
+       
         
     }
     
@@ -112,7 +114,12 @@ class MemeEditorViewController: UIViewController {
     
     // reset UI
     @IBAction func resetUI(sender: UIBarButtonItem) {
+        setupTextField(topTextField, withText: Top_Message)
+        setupTextField(bottomTextField, withText: Bottom_Message)
+        imageView.image = nil
+        shareButton.enabled = false
         
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     //MARK: -
