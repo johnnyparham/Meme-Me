@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+
+
 
 class MemeEditorViewController: UIViewController {
 
@@ -22,6 +25,11 @@ class MemeEditorViewController: UIViewController {
     
     var pickerDelegate: ImagePickerDelegate!
     
+    
+    // variable for image editing
+    var imageToEdit: Meme?
+    var isEditing : Bool! = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,8 +42,17 @@ class MemeEditorViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
     
+        // camera button & share button availability
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = imageView.image != nil
+        
+        // prepare image for meme
+        if let temp = imageToEdit {
+            imageView.image = UIImage(data: temp.originalImage)
+            topTextField.text = temp.textTop
+            bottomTextField.text = temp.textBottom
+            isEditing = true
+        }
     
     }
     
