@@ -69,20 +69,52 @@
 			isa = PBXGroup;
 			children = (
 				1323B9A31CE7A242005C2391 /* AppDelegate.swift */,
-				1323B9A51CE7A242005C2391 /* MemeEditorViewController.swift */,
-				1323B9C31CE845A4005C2391 /* TopTextFieldDelegate.swift */,
-				1323B9BE1CE83691005C2391 /* CoreDataStackManager.swift */,
-				1323B9C01CE83C95005C2391 /* MemeModel.xcdatamodeld */,
-				1323B9BC1CE7FD09005C2391 /* Meme.swift */,
-				1323B9B81CE7B458005C2391 /* ImagePickerDelegate.swift */,
+				1323B9C71CE95109005C2391 /* Model */,
+				1323B9C81CE9513F005C2391 /* View Controller */,
+				1323B9C91CE95162005C2391 /* Delegates */,
+				1323B9CA1CE9518D005C2391 /* Core Data */,
 				1323B9A71CE7A242005C2391 /* Main.storyboard */,
-				1323B9C51CE852B3005C2391 /* BottomTextFieldDelegate.swift */,
 				1323B9AD1CE7A242005C2391 /* Assets.xcassets */,
 				1323B9AF1CE7A242005C2391 /* LaunchScreen.storyboard */,
 				1323B9B21CE7A242005C2391 /* Info.plist */,
 				1323B9AA1CE7A242005C2391 /* MemeMe_version_1_0.xcdatamodeld */,
 			);
 			path = "MemeMe version 1.0";
+			sourceTree = "<group>";
+		};
+		1323B9C71CE95109005C2391 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1323B9BC1CE7FD09005C2391 /* Meme.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1323B9C81CE9513F005C2391 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1323B9A51CE7A242005C2391 /* MemeEditorViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		1323B9C91CE95162005C2391 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1323B9B81CE7B458005C2391 /* ImagePickerDelegate.swift */,
+				1323B9C31CE845A4005C2391 /* TopTextFieldDelegate.swift */,
+				1323B9C51CE852B3005C2391 /* BottomTextFieldDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		1323B9CA1CE9518D005C2391 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				1323B9BE1CE83691005C2391 /* CoreDataStackManager.swift */,
+				1323B9C01CE83C95005C2391 /* MemeModel.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

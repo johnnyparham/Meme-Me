@@ -73,8 +73,6 @@ class MemeEditorViewController: UIViewController {
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = imageView.image != nil
         cancelButton.enabled = imageView.image != nil
-        
-        
     
     }
     
@@ -82,6 +80,8 @@ class MemeEditorViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    
  
 
     //MARK: -
@@ -91,11 +91,15 @@ class MemeEditorViewController: UIViewController {
     // open the image picker controller from the library
     @IBAction func pickImageFromLibrary(sender: UIBarButtonItem) {
         pickImage(ofType: UIImagePickerControllerSourceType.PhotoLibrary)
+        
+        
     }
     
     // open the image picker controller from the camera
     @IBAction func pickImageFromCamera(sender: UIBarButtonItem) {
         pickImage(ofType: UIImagePickerControllerSourceType.Camera)
+        supportedInterfaceOrientations()
+        
     }
     
     // share the created meme image
@@ -136,6 +140,7 @@ class MemeEditorViewController: UIViewController {
         pickerController.delegate = pickerDelegate
         pickerController.sourceType = type
         presentViewController(pickerController, animated: true, completion: nil)
+        
     }
     
     // setup text fields
