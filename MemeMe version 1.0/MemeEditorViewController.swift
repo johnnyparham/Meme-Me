@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 
-
 class MemeEditorViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -31,7 +30,6 @@ class MemeEditorViewController: UIViewController {
     
     // variable for image editing
     var imageToEdit: Meme?
-    var isEditing : Bool! = false
     
     let Top_Message = "Top"
     let Bottom_Message = "Bottom"
@@ -62,8 +60,6 @@ class MemeEditorViewController: UIViewController {
         setupTextField(topTextField, withText: Top_Message)
         setupTextField(bottomTextField, withText: Bottom_Message)
         
-       
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -81,8 +77,6 @@ class MemeEditorViewController: UIViewController {
         return true
     }
     
-    
- 
 
     //MARK: -
     //MARK: Action functions
@@ -177,10 +171,13 @@ class MemeEditorViewController: UIViewController {
     
     // create meme object
     private func saveMeme(generated: UIImage) {
+        
         _ = Meme(top: topTextField.text!, bottom: bottomTextField.text!, original: imageView.image!, newimage: generated, context: temporaryContext)
+        
+        CoreDataStackManager.sharedInstance().saveContext()
+        
+        
     }
-    
-    
     
     
     
