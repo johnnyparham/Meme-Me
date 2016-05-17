@@ -21,13 +21,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sV7-xY-IKG" userLabel="Top Tool Bar">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Share Button" id="Eq7-TI-VUr">
+                                    <barButtonItem systemItem="action" id="Eq7-TI-VUr">
                                         <connections>
                                             <action selector="shareMemeImage:" destination="BYZ-38-t0r" id="Bq8-PY-YhA"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ctf-f8-0r8"/>
-                                    <barButtonItem title="Cancel" id="ZeU-lT-TIV">
+                                    <barButtonItem systemItem="cancel" id="ZeU-lT-TIV">
                                         <connections>
                                             <action selector="resetUI:" destination="BYZ-38-t0r" id="YEe-P5-xm1"/>
                                         </connections>
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iWK-QR-87o"/>
-                                    <barButtonItem title="Camera Button" id="dgT-7E-XeN">
+                                    <barButtonItem systemItem="camera" id="dgT-7E-XeN">
                                         <connections>
                                             <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="Y5X-1l-cIg"/>
                                         </connections>
