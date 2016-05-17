@@ -31,8 +31,8 @@ class MemeEditorViewController: UIViewController {
     // variable for image editing
     var imageToEdit: Meme?
     
-    let Top_Message = "Top"
-    let Bottom_Message = "Bottom"
+    let Top_Message = "TOP"
+    let Bottom_Message = "BOTTOM"
     
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -57,8 +57,8 @@ class MemeEditorViewController: UIViewController {
         topTextField.delegate = topTextDelegate
         bottomTextField.delegate = bottomTextDelegate
         
-        setupTextField(topTextField, withText: Top_Message)
-        setupTextField(bottomTextField, withText: Bottom_Message)
+         setupTextField(topTextField, withText: Top_Message)
+         setupTextField(bottomTextField, withText: Bottom_Message)
         
     }
     

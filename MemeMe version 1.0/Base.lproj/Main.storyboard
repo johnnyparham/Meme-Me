@@ -55,17 +55,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SkW-Gm-nZf">
                                 <rect key="frame" x="20" y="72" width="560" height="484"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgo-3k-vkx">
-                                <rect key="frame" x="189" y="92" width="222" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="oqL-JJ-L8F"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3G-V2-Wx8">
+                                <rect key="frame" x="189" y="513" width="222" height="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s3G-V2-Wx8">
-                                <rect key="frame" x="189" y="513" width="222" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgo-3k-vkx">
+                                <rect key="frame" x="189" y="97" width="222" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="oqL-JJ-L8F"/>
+                                </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -75,7 +75,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sV7-xY-IKG" secondAttribute="trailing" id="4Pd-cQ-D1R"/>
                             <constraint firstItem="sV7-xY-IKG" firstAttribute="trailing" secondItem="AcI-Ub-6Lg" secondAttribute="trailing" id="8Oc-Gs-zCm"/>
-                            <constraint firstItem="rgo-3k-vkx" firstAttribute="top" secondItem="sV7-xY-IKG" secondAttribute="bottom" constant="20" id="DwO-3U-6ju"/>
+                            <constraint firstItem="rgo-3k-vkx" firstAttribute="top" secondItem="sV7-xY-IKG" secondAttribute="bottom" constant="25" id="DwO-3U-6ju"/>
                             <constraint firstItem="sV7-xY-IKG" firstAttribute="leading" secondItem="AcI-Ub-6Lg" secondAttribute="leading" id="V9A-XN-PY2"/>
                             <constraint firstItem="rgo-3k-vkx" firstAttribute="trailing" secondItem="s3G-V2-Wx8" secondAttribute="trailing" id="X4R-Wu-1ce"/>
                             <constraint firstItem="AcI-Ub-6Lg" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Xzh-Bd-trH"/>
