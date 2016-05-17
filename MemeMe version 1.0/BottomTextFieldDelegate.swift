@@ -25,7 +25,6 @@ class BottomTextFieldDelegate: NSObject, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         subscribeToKeyboardNotification()
-        
         var currentText = textField.text
         
         if currentText == bottomText {
@@ -55,7 +54,7 @@ class BottomTextFieldDelegate: NSObject, UITextFieldDelegate {
         container.frame.origin.y = -getKeyboardHeight(notification)
     }
     
-    // change the size of the view to move up when the keyboard disappers
+    // change the size of the view to move down when the keyboard disappers
     func keyboardWillDismiss(notification: NSNotification) {
         container.frame.origin.y = 0
     }

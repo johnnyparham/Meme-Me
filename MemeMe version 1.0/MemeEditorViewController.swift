@@ -51,7 +51,7 @@ class MemeEditorViewController: UIViewController {
         imageView.contentMode = .ScaleAspectFit
         
         pickerDelegate = ImagePickerDelegate(view: imageView)
-        topTextDelegate = TopTextFieldDelegate()
+        topTextDelegate = TopTextFieldDelegate(screenView: view)
         bottomTextDelegate = BottomTextFieldDelegate(screenView: view)
         
         topTextField.delegate = topTextDelegate
