@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class ImagePickerDelegate: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -15,7 +16,8 @@ class ImagePickerDelegate: NSObject, UIImagePickerControllerDelegate, UINavigati
     
     init(view: UIImageView!) {
         imageHolder = view
-    }
+        
+        }
     
     // get selected picture
     
@@ -33,6 +35,7 @@ class ImagePickerDelegate: NSObject, UIImagePickerControllerDelegate, UINavigati
     private func dismiss(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
+
 
     
 }

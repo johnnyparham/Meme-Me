@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 
 class MemeEditorViewController: UIViewController {
@@ -27,6 +28,9 @@ class MemeEditorViewController: UIViewController {
     var topTextDelegate: TopTextFieldDelegate!
     var bottomTextDelegate: BottomTextFieldDelegate!
     
+    var topConstraint: NSLayoutConstraint!
+    var bottomConstraint: NSLayoutConstraint!
+    
     
     // variable for image editing
     var imageToEdit: Meme?
@@ -34,6 +38,7 @@ class MemeEditorViewController: UIViewController {
     let Top_Message = "TOP"
     let Bottom_Message = "BOTTOM"
     
+    // set text attributes
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor(),
@@ -44,6 +49,9 @@ class MemeEditorViewController: UIViewController {
     lazy var temporaryContext: NSManagedObjectContext = {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }()
+    
+    // get position of the image inside the imagee
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +65,8 @@ class MemeEditorViewController: UIViewController {
         topTextField.delegate = topTextDelegate
         bottomTextField.delegate = bottomTextDelegate
         
-         setupTextField(topTextField, withText: Top_Message)
-         setupTextField(bottomTextField, withText: Bottom_Message)
+        setupTextField(topTextField, withText: Top_Message)
+        setupTextField(bottomTextField, withText: Bottom_Message)
         
     }
     
@@ -70,6 +78,11 @@ class MemeEditorViewController: UIViewController {
         shareButton.enabled = imageView.image != nil
         cancelButton.enabled = imageView.image != nil
     
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layoutTextFields()
     }
     
     // make this view controller to be full screen
@@ -177,6 +190,33 @@ class MemeEditorViewController: UIViewController {
         CoreDataStackManager.sharedInstance().saveContext()
         
         
+    }
+    
+    // reset textfield contraints to match image size
+    private func layoutTextFields() {
+        
+        // remove any existing constraints
+        if topConstraint != nil {
+            view.removeConstraint(topConstraint)
+        }
+        
+        if bottomConstraint != nil {
+            view.removeConstraint(bottomConstraint)
+        }
+        
+        // get the position of the image insie the imageView
+        let size = imageView.image != nil ? imageView.image!.size : imageView.frame.size
+        let frame = AVMakeRectWithAspectRatioInsideRect(size, imageView.bounds)
+        
+        // margin for the new constraints: 10% of the frame's height
+        let margin = frame.origin.y + frame.size.height * 0.10
+        
+        // create and add the new constraints
+        topConstraint = NSLayoutConstraint(item: topTextField, attribute: .Top, relatedBy: .Equal, toItem: imageView, attribute: .Top, multiplier: 1.0, constant: margin)
+        view.addConstraint(topConstraint)
+        
+        bottomConstraint = NSLayoutConstraint(item: bottomTextField, attribute: .Bottom, relatedBy: .Equal, toItem: imageView, attribute: .Bottom, multiplier: 1.0, constant: -margin)
+        view.addConstraint(bottomConstraint)
     }
     
     
