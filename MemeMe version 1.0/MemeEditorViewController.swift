@@ -11,7 +11,7 @@ import CoreData
 import AVFoundation
 
 
-class MemeEditorViewController: UIViewController {
+class MemeEditorViewController: UIViewController, FontViewProtocol {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -85,9 +85,24 @@ class MemeEditorViewController: UIViewController {
         layoutTextFields()
     }
     
+    // set set the parameter of the view when the segue is executed
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let controller = segue.destinationViewController as! FontViewController
+        controller.delegate = self
+    }
+    
     // make this view controller to be full screen
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    //MARK: -
+    //MARK: protocol functions
+    
+    // set the font of the textfield after the user chooses it
+    func fontSelected(font: String) {
+        topTextField.font = UIFont(name: font, size: 40)
+        bottomTextField.font = UIFont(name: font, size: 40)
     }
     
 
