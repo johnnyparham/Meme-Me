@@ -14,21 +14,45 @@ protocol FontViewProtocol {
     func fontSelected(font: String)
 }
 
-class FontViewController: UIViewController {
+class FontViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
     var delegate: FontViewProtocol?
+    
+    var content: [String] = ["Apple Color Emoji", "Courier New", "Marker Felt", "Helvetica Neue", "Times New Roman", "Cooperplate"]
+    
+    //MARK: -
+    //MARK: lifecycle functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "itemContainer")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  
+    //MARK: -
+    //MARK: table view delegate functions
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return content.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var line:UITableViewCell
+        
+        line = tableView.dequeueReusableCellWithIdentifier("itemContainer") as UITableViewCell!
+        line.textLabel?.text = content[indexPath.row]
+        
+        return line
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let font = content[indexPath.row]
+        delegate?.fontSelected(font)
+        
+        closeViewController()
     }
     
     //MARK: -
@@ -45,14 +69,5 @@ class FontViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
