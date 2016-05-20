@@ -334,11 +334,11 @@
             </objects>
             <point key="canvasLocation" x="2683" y="336"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="mIL-hm-dgv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kVt-6C-eTD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LpE-t1-BpI"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="LpE-t1-BpI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tsU-Xa-JyC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -353,11 +353,11 @@
             </objects>
             <point key="canvasLocation" x="324" y="-7"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="VtT-TT-bPw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qed-P9-F8k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gke-2Z-4c9"/>
+                    <tabBarItem key="tabBarItem" title="" image="grid" id="gke-2Z-4c9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ttb-DA-f9f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -391,6 +391,10 @@
             <point key="canvasLocation" x="324" y="1417"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="grid" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QGI-80-fHg"/>
     </inferredMetricsTieBreakers>

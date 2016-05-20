@@ -89,7 +89,6 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
         // camera button & share button availability
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = imageView.image != nil
-        cancelButton.enabled = imageView.image != nil
     
     }
     
