@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 import AVFoundation
 
+// protocol responsible for sending the edited meme back to the MemeDetailViewController
+protocol MemeEditorProtocol {
+    func finishToEdit(meme: Meme)
+}
 
 class MemeEditorViewController: UIViewController, FontViewProtocol {
 
@@ -31,9 +35,12 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
     var topConstraint: NSLayoutConstraint!
     var bottomConstraint: NSLayoutConstraint!
     
+    var delegate: MemeEditorProtocol?
     
     // variable for image editing
     var imageToEdit: Meme?
+    var memeIndex: Int!
+    var isEditing: Bool! = false
     
     let Top_Message = "TOP"
     let Bottom_Message = "BOTTOM"
@@ -50,13 +57,11 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }()
     
-    // get position of the image inside the imagee
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
         
         pickerDelegate = ImagePickerDelegate(view: imageView)
         topTextDelegate = TopTextFieldDelegate(screenView: view)
@@ -72,6 +77,14 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+        
+        // set the values of the meme that we want to edit
+        if let temp = imageToEdit {
+            imageView.image = UIImage(data: temp.originalImage)
+            topTextField.text = temp.textTop
+            bottomTextField.text = temp.textBottom
+            isEditing = true
+        }
     
         // camera button & share button availability
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
@@ -200,7 +213,15 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
     // create meme object
     private func saveMeme(generated: UIImage) {
         
+        if(isEditing == true) {
+            imageToEdit?.textTop = topTextField.text!
+            imageToEdit?.textBottom = bottomTextField.text!
+            imageToEdit?.memeImage = UIImagePNGRepresentation(generated)
+            delegate?.finishToEdit(imageToEdit!)
+        } else {
+        
         _ = Meme(top: topTextField.text!, bottom: bottomTextField.text!, original: imageView.image!, newimage: generated, context: temporaryContext)
+        }
         
         CoreDataStackManager.sharedInstance().saveContext()
         

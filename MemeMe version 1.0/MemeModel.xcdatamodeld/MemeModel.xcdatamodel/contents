@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
-    <entity name="Meme" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+    <entity name="Meme" representedClassName=".Meme" syncable="YES">
         <attribute name="memeImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="originalImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="textBottom" optional="YES" attributeType="String" syncable="YES"/>

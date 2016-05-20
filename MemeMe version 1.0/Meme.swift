@@ -22,6 +22,7 @@ class Meme: NSManagedObject {
     }
     
     init(top: String, bottom: String, original: UIImage, newimage: UIImage, context: NSManagedObjectContext) {
+        
         let entity = NSEntityDescription.entityForName("Meme", inManagedObjectContext: context)
         super.init(entity: entity!, insertIntoManagedObjectContext: context)
         
@@ -30,8 +31,5 @@ class Meme: NSManagedObject {
         originalImage = UIImagePNGRepresentation(original)
         memeImage = UIImagePNGRepresentation(newimage)
     }
-    
-    
-    
 
 }

@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+
 class CoreDataStackManager {
     
     // MARK: -
@@ -29,7 +30,7 @@ class CoreDataStackManager {
     lazy var managedObjectContext: NSManagedObjectContext = {
         
         // document directory to put the sqlite file
-        let documentDirectory =
+        let documentsDirectory =
         NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last
         
         // model object
@@ -39,7 +40,7 @@ class CoreDataStackManager {
         let persistantStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel!)
         
         do {
-            try persistantStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: documentDirectory?.URLByAppendingPathComponent("MemeStore.sqlite"), options: nil)
+            try persistantStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: documentsDirectory?.URLByAppendingPathComponent("MemeStore.sqlite"), options: nil)
         } catch {
             NSLog("There was an error creating or loading the application's saved data.")
             
