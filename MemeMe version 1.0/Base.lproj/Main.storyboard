@@ -103,7 +103,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="266" height="189"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvD-9T-YK7">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qvD-9T-YK7">
                                             <rect key="frame" x="13" y="31" width="240" height="128"/>
                                         </imageView>
                                     </subviews>
@@ -153,12 +153,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCb-Ks-tyx">
-                                <rect key="frame" x="113" y="98" width="372" height="428"/>
+                                <rect key="frame" x="20" y="72" width="560" height="444"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unp-ML-DhA">
-                                <rect key="frame" x="276" y="539" width="46" height="30"/>
+                                <rect key="frame" x="277" y="532" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="TlK-na-p7N"/>
+                                    <constraint firstAttribute="width" constant="46" id="17I-zj-I6i"/>
                                 </constraints>
                                 <state key="normal" title="Delete"/>
                                 <connections>
@@ -168,12 +168,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="m4V-g1-ber" firstAttribute="top" secondItem="Unp-ML-DhA" secondAttribute="bottom" constant="31" id="0bw-pd-oF2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xCb-Ks-tyx" secondAttribute="trailing" constant="95" id="6fK-t5-4qJ"/>
-                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="top" secondItem="RYk-vP-hjW" secondAttribute="bottom" constant="34" id="9Hd-Ib-LOb"/>
-                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="leading" secondItem="ItT-08-uXM" secondAttribute="leadingMargin" constant="93" id="Fre-wB-MIW"/>
-                            <constraint firstItem="Unp-ML-DhA" firstAttribute="top" secondItem="xCb-Ks-tyx" secondAttribute="bottom" constant="13" id="Lx8-wV-6KQ"/>
-                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="centerX" secondItem="Unp-ML-DhA" secondAttribute="centerX" id="SR8-Ht-9NS"/>
+                            <constraint firstItem="m4V-g1-ber" firstAttribute="top" secondItem="Unp-ML-DhA" secondAttribute="bottom" constant="38" id="Wvm-zV-wJ8"/>
+                            <constraint firstItem="Unp-ML-DhA" firstAttribute="top" secondItem="xCb-Ks-tyx" secondAttribute="bottom" constant="16" id="Zqy-bG-3za"/>
+                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="top" secondItem="RYk-vP-hjW" secondAttribute="bottom" constant="8" symbolic="YES" id="f8q-TL-RTz"/>
+                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="trailing" secondItem="ItT-08-uXM" secondAttribute="trailingMargin" id="uY2-TB-jIq"/>
+                            <constraint firstItem="Unp-ML-DhA" firstAttribute="centerX" secondItem="xCb-Ks-tyx" secondAttribute="centerX" id="xo5-rs-DZt"/>
+                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="leading" secondItem="ItT-08-uXM" secondAttribute="leadingMargin" id="zxb-b3-3N6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gv1-zS-i7e">
