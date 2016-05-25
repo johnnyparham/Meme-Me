@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -153,35 +154,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCb-Ks-tyx">
-                                <rect key="frame" x="20" y="72" width="560" height="388"/>
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unp-ML-DhA">
-                                <rect key="frame" x="277" y="532" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="17I-zj-I6i"/>
-                                </constraints>
-                                <state key="normal" title="Delete"/>
-                                <connections>
-                                    <action selector="deleteMeme:" destination="4mA-gt-STY" eventType="touchUpInside" id="m02-UO-s08"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xCb-Ks-tyx" firstAttribute="top" secondItem="RYk-vP-hjW" secondAttribute="bottom" constant="8" symbolic="YES" id="GHY-CS-dtm"/>
-                            <constraint firstItem="m4V-g1-ber" firstAttribute="top" secondItem="Unp-ML-DhA" secondAttribute="bottom" constant="38" id="Wvm-zV-wJ8"/>
-                            <constraint firstItem="Unp-ML-DhA" firstAttribute="top" secondItem="xCb-Ks-tyx" secondAttribute="bottom" constant="72" id="Xpc-QU-9lc"/>
-                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="centerX" secondItem="Unp-ML-DhA" secondAttribute="centerX" id="sHp-ZM-dRk"/>
+                            <constraint firstAttribute="bottom" secondItem="xCb-Ks-tyx" secondAttribute="bottom" constant="20" symbolic="YES" id="Vbj-QO-MYr"/>
                             <constraint firstItem="xCb-Ks-tyx" firstAttribute="trailing" secondItem="ItT-08-uXM" secondAttribute="trailingMargin" id="tMg-Sw-xyh"/>
                             <constraint firstItem="xCb-Ks-tyx" firstAttribute="leading" secondItem="ItT-08-uXM" secondAttribute="leadingMargin" id="wah-4f-ctI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gv1-zS-i7e">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Auf-IY-KIt">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="editSegue" id="w79-Wy-zs8"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="Auf-IY-KIt">
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="editSegue" id="w79-Wy-zs8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="4ob-VF-B3e">
+                                <connections>
+                                    <action selector="deleteMemeImage:" destination="4mA-gt-STY" id="Q17-Xk-ixq"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="memeDetailed" destination="xCb-Ks-tyx" id="d56-nX-QZ3"/>
@@ -400,6 +396,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QGI-80-fHg"/>
+        <segue reference="w79-Wy-zs8"/>
     </inferredMetricsTieBreakers>
 </document>

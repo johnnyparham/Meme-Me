@@ -64,13 +64,7 @@ class MemeEditorViewController: UIViewController, FontViewProtocol, UITextFieldD
         
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         pickerDelegate = ImagePickerDelegate(view: imageView)
-        //topTextDelegate = TopTextFieldDelegate(screenView: view)
-        //bottomTextDelegate = BottomTextFieldDelegate(screenView: view)
         
-        //topTextField.defaultTextAttributes = memeTextAttributes
-        //bottomTextField.defaultTextAttributes = memeTextAttributes
-        //topTextField.textAlignment = NSTextAlignment.Center
-        //bottomTextField.textAlignment = NSTextAlignment.Center
         topTextField.delegate = self
         bottomTextField.delegate = self
         
@@ -191,7 +185,7 @@ class MemeEditorViewController: UIViewController, FontViewProtocol, UITextFieldD
     // function called as soon as the user wants to edit either the top or bottom text
     func textFieldDidBeginEditing(textField: UITextField) {
     
-    if topTextField.text == "TOP" || textField.text == "BOTTOM"  {
+        if topTextField.text == "TOP" || textField.text == "BOTTOM"  {
             textField.text = ""
         }
         

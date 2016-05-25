@@ -20,7 +20,7 @@ class FontViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var delegate: FontViewProtocol?
     
-    var content: [String] = ["Apple Color Emoji", "AppleSDGothicNeo-Regular", "Arial-BoldMT", "Baskerville", "ChalkboardSE-Regular", "Courier New", "Copperplate", "Damascus", "Farah", "Helvetica Neue", "HelveticaNeue-CondensedBlack", "Marker Felt", "Times New Roman"]
+    var content: [String] = ["Apple Color Emoji", "AppleSDGothicNeo-Regular", "Arial-BoldMT", "Baskerville", "ChalkboardSE-Regular", "Courier New", "Copperplate", "Helvetica Neue", "HelveticaNeue-CondensedBlack", "Marker Felt", "Times New Roman"]
     
     //MARK: -
     //MARK: lifecycle functions

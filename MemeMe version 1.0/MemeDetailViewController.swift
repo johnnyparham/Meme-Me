@@ -25,7 +25,7 @@ class MemeDetailViewController: UIViewController, MemeEditorProtocol {
     // MARK: lifecycle functions
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+                super.viewWillAppear(animated)
         
         memeDetailed.image = UIImage(data: meme.memeImage)
     }
@@ -46,13 +46,15 @@ class MemeDetailViewController: UIViewController, MemeEditorProtocol {
     // MARK: -
     // MARK: action functions
     
-    @IBAction func deleteMeme(sender: UIButton) {
+    @IBAction func deleteMemeImage(sender: AnyObject) {
         sharedContext.deleteObject(meme)
         CoreDataStackManager.sharedInstance().saveContext()
         
         navigationController!.popViewControllerAnimated(true)
-        print("Delete Button Pressed")
+        
+    
     }
+
     
     // MARK: -
     // MARK: delegate
