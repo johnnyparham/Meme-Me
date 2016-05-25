@@ -51,6 +51,7 @@ class MemeDetailViewController: UIViewController, MemeEditorProtocol {
         CoreDataStackManager.sharedInstance().saveContext()
         
         navigationController!.popViewControllerAnimated(true)
+        print("Delete Button Pressed")
     }
     
     // MARK: -

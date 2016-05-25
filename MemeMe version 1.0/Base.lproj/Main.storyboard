@@ -46,7 +46,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJP-WM-oMy">
                                             <rect key="frame" x="279" y="60" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -153,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCb-Ks-tyx">
-                                <rect key="frame" x="20" y="72" width="560" height="444"/>
+                                <rect key="frame" x="20" y="72" width="560" height="388"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unp-ML-DhA">
                                 <rect key="frame" x="277" y="532" width="46" height="30"/>
@@ -168,12 +168,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="top" secondItem="RYk-vP-hjW" secondAttribute="bottom" constant="8" symbolic="YES" id="GHY-CS-dtm"/>
                             <constraint firstItem="m4V-g1-ber" firstAttribute="top" secondItem="Unp-ML-DhA" secondAttribute="bottom" constant="38" id="Wvm-zV-wJ8"/>
-                            <constraint firstItem="Unp-ML-DhA" firstAttribute="top" secondItem="xCb-Ks-tyx" secondAttribute="bottom" constant="16" id="Zqy-bG-3za"/>
-                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="top" secondItem="RYk-vP-hjW" secondAttribute="bottom" constant="8" symbolic="YES" id="f8q-TL-RTz"/>
-                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="trailing" secondItem="ItT-08-uXM" secondAttribute="trailingMargin" id="uY2-TB-jIq"/>
-                            <constraint firstItem="Unp-ML-DhA" firstAttribute="centerX" secondItem="xCb-Ks-tyx" secondAttribute="centerX" id="xo5-rs-DZt"/>
-                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="leading" secondItem="ItT-08-uXM" secondAttribute="leadingMargin" id="zxb-b3-3N6"/>
+                            <constraint firstItem="Unp-ML-DhA" firstAttribute="top" secondItem="xCb-Ks-tyx" secondAttribute="bottom" constant="72" id="Xpc-QU-9lc"/>
+                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="centerX" secondItem="Unp-ML-DhA" secondAttribute="centerX" id="sHp-ZM-dRk"/>
+                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="trailing" secondItem="ItT-08-uXM" secondAttribute="trailingMargin" id="tMg-Sw-xyh"/>
+                            <constraint firstItem="xCb-Ks-tyx" firstAttribute="leading" secondItem="ItT-08-uXM" secondAttribute="leadingMargin" id="wah-4f-ctI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gv1-zS-i7e">

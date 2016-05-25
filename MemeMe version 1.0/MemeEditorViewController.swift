@@ -15,7 +15,7 @@ protocol MemeEditorProtocol {
     func finishToEdit(meme: Meme)
 }
 
-class MemeEditorViewController: UIViewController, FontViewProtocol {
+class MemeEditorViewController: UIViewController, FontViewProtocol, UITextFieldDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -28,9 +28,10 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
     @IBOutlet weak var topToolBar: UIToolbar!
     @IBOutlet weak var bottomToolBar: UIToolbar!
     
+    var originalView: CGFloat = 0.0
     var pickerDelegate: ImagePickerDelegate!
-    var topTextDelegate: TopTextFieldDelegate!
-    var bottomTextDelegate: BottomTextFieldDelegate!
+    //var topTextDelegate: TopTextFieldDelegate!
+    //var bottomTextDelegate: BottomTextFieldDelegate!
     
     var topConstraint: NSLayoutConstraint!
     var bottomConstraint: NSLayoutConstraint!
@@ -62,13 +63,16 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
         super.viewDidLoad()
         
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        
         pickerDelegate = ImagePickerDelegate(view: imageView)
-        topTextDelegate = TopTextFieldDelegate(screenView: view)
-        bottomTextDelegate = BottomTextFieldDelegate(screenView: view)
+        //topTextDelegate = TopTextFieldDelegate(screenView: view)
+        //bottomTextDelegate = BottomTextFieldDelegate(screenView: view)
         
-        topTextField.delegate = topTextDelegate
-        bottomTextField.delegate = bottomTextDelegate
+        //topTextField.defaultTextAttributes = memeTextAttributes
+        //bottomTextField.defaultTextAttributes = memeTextAttributes
+        //topTextField.textAlignment = NSTextAlignment.Center
+        //bottomTextField.textAlignment = NSTextAlignment.Center
+        topTextField.delegate = self
+        bottomTextField.delegate = self
         
         setupTextField(topTextField, withText: Top_Message)
         setupTextField(bottomTextField, withText: Bottom_Message)
@@ -89,7 +93,14 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
         // camera button & share button availability
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = imageView.image != nil
+        subscribeToKeyboardNotifications()
+    }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // stop listening for keyboard notification
+        unsubscribeFromKeyboardNotifications()
     }
     
     override func viewDidLayoutSubviews() {
@@ -175,6 +186,63 @@ class MemeEditorViewController: UIViewController, FontViewProtocol {
         pickerController.sourceType = type
         presentViewController(pickerController, animated: true, completion: nil)
         
+    }
+    
+    // function called as soon as the user wants to edit either the top or bottom text
+    func textFieldDidBeginEditing(textField: UITextField) {
+    
+    if topTextField.text == "TOP" || textField.text == "BOTTOM"  {
+            textField.text = ""
+        }
+        
+    }
+    
+    // function called when user is done edited
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true;
+    }
+    
+    // function to tell the system which keyboard functions we care to list for
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    // function to tell the system we are done listening to the keyboard notifications
+    func unsubscribeFromKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    // function called when the app will display keyboard to the user
+    func keyboardWillShow(notification: NSNotification) {
+        originalView = view.frame.origin.y
+        if bottomTextField.isFirstResponder() {
+            view.frame.origin.y = -getKeyboardHeight(notification)
+        } else if topTextField.isFirstResponder(){
+            view.frame.origin.y = 0
+        }
+    }
+    
+    // function called before keyboard goes away
+    func keyboardWillHide(notification: NSNotification) {
+        
+        if self.bottomTextField.editing {
+            let userInfo = notification.userInfo
+            let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+            self.view.frame.origin.y += keyboardSize.CGRectValue().height
+        }
+        
+    }
+    
+    // function to determin how much space the keyboard takes
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.CGRectValue().height
     }
     
     // setup text fields
