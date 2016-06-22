@@ -12,7 +12,7 @@ MemeMe was developed to meet the specified requirements for the second project o
 
 *Step 2 - Open the project in Xcode*
 
-` $ open "MemeMe-version-1.0.xcode"`
+` $ open "MemeMe-version-1.0.xcodeproj"`
 
 *Build the app in your simulator*
 
