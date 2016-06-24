@@ -1,6 +1,6 @@
 # MemeMe
 
-MemeMe is an iOS app developed in Swift 2 that takes pictures and overlays text to make memes out of friends, family, or pets.  The app also allows sharing with others via social media or email, and viewing past memes in a table or collection view.  The app automatically detects the orientation of the image to insure the Meme text placement is properly overlayed.
+MemeMe is an iOS app developed in Swift 2.2 that takes pictures and overlays text to make memes out of friends, family, or pets.  The app also allows sharing with others via social media or email, and viewing past memes in a table or collection view.  The app automatically detects the orientation of the image to insure the Meme text placement is properly overlayed.
 
 MemeMe was developed to meet the specified requirements for the second project of the Udacity iOS Nanodegree.  One element that is unique about the app is that is uses Core Data instead of an array/struct to store and manage the data.
 
